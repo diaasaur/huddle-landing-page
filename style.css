@@ -49,7 +49,8 @@ body {
 	/* grid */
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	padding: 2em 2em 0;
+	padding: min(10%, 2em);
+	padding-bottom: 0;
 	text-align: center;
 	row-gap: 2em;
 }
