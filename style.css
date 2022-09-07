@@ -1,0 +1,153 @@
+/* reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+button {
+	font: inherit;
+}
+
+/* variables */
+:root {
+	--violet: hsl(257, 40%, 49%);
+	--soft-magenta: hsl(300, 69%, 71%);
+	--light-magenta: hsl(300, 69%, 81%);
+	--ff: "Open Sans", sans-serif;
+	--ff-headings: "Poppins", sans-serif;
+	--fs: 1rem;
+}
+
+/* utilities */
+.offscreen {
+	position: absolute;
+	left: -10000px;
+}
+
+/* general styles */
+body {
+	min-height: 100vh;
+	font-family: var(--ff);
+	font-size: var(--fs);
+	letter-spacing: 0.5px;
+	line-height: 1.5;
+	/* background */
+	background-image: url("./images/bg-mobile.svg");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: var(--violet);
+	background-size: contain;
+	color: #fff;
+	/* grid */
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	padding: 2em 2em 0;
+	text-align: center;
+	row-gap: 2em;
+}
+
+/* logo */
+.logo {
+	height: calc(40px + 1.1vw);
+}
+
+/* main */
+main {
+	display: grid;
+	row-gap: 2em;
+}
+p.main-text {
+	margin: 1.725em 0;
+}
+
+h1,
+h2 {
+	font-family: var(--ff-headings);
+}
+/* socials */
+.socials {
+	display: flex;
+	justify-content: center;
+}
+.social svg {
+	width: 1rem;
+	color: white;
+}
+.social {
+	border: 1px solid white;
+	width: 2.75em;
+	height: 2.75em;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	margin: 1em;
+}
+.social:hover {
+	border-color: var(--light-magenta);
+}
+.social:hover svg {
+	color: var(--light-magenta);
+}
+
+/* button */
+.register {
+	border: none;
+	border-radius: 100px;
+	text-transform: capitalize;
+	cursor: pointer;
+	padding: 0.75em 5em;
+	font-family: var(--ff-headings);
+	letter-spacing: 0.5px;
+	color: var(--violet);
+	background-color: white;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
+		0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.register:hover {
+	background-color: var(--soft-magenta);
+	color: white;
+	transition: all 0.3s ease-in-out;
+}
+
+/* attribution */
+.attribution {
+	font-size: 11px;
+}
+.attribution a {
+	color: var(--soft-magenta);
+}
+
+@media screen and (min-width: 769px) {
+	body {
+		background-image: url("./images/bg-desktop.svg");
+		background-size: cover;
+		background-position: center;
+	}
+	main {
+		grid-template-columns: 1fr 0.8fr;
+		place-items: center;
+		text-align: start;
+		gap: 2em;
+	}
+
+	.main-right {
+		justify-self: start;
+		max-width: 500px;
+		font-size: 1.1rem;
+	}
+	.main-right h2 {
+		font-size: 2rem;
+	}
+
+	.socials {
+		justify-content: end;
+	}
+}
